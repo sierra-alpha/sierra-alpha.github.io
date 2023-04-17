@@ -1,0 +1,109 @@
+---
+---
+
+{% include bootstrap.html %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-auto" style="width: 280px;">
+            <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="height: 100vh; overflow-y: scroll;">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <img class="rounded" src="{{ site.data.navbar.logo_location }}" style="background-color:white;" width="100%">
+                </a>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-auto">
+                    {% for item in site.data.navbar.links %}
+                    <li class="nav-item">
+                        <a href="{{ item.link }}" class="nav-link text-white">
+                            <img src="/assets/menu-icons/{{ forloop.index }}.svg"
+                                 class="bi pe-nome me-2"
+                                 width="32"
+                                 height="32">
+                            {{ item.name }}
+                        </a>
+                    </li>
+                    {% endfor %}
+
+                </ul>
+                <hr>
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="" class="rounded-circle me-2" width="32" height="32">
+                        <strong>mdo</strong>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" style="">
+                        <li><a class="dropdown-item" href="#">New project...</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col" style="height:100vh;overflow-y: scroll;">
+            <div style="height: 10000px; background-color: red; ">Hi Content will go here</div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div>
+     <div class="row">
+     <div class="col-3">
+     <nav id="navbar-example3"
+     class="h-100 flex-column align-items-stretch pe-4 border-end">
+     <nav class="nav nav-pills flex-column">
+     <a class="navbar-brand" href="#">Navbar</a>
+     <a class="nav-link" href="#item-1">Item 1</a>
+     <nav class="nav nav-pills flex-column">
+     <a class="nav-link ms-3 my-1" href="#item-1-1">Item 1-1</a>
+     <a class="nav-link ms-3 my-1" href="#item-1-2">Item 1-2</a>
+     </nav>
+     <a class="nav-link" href="#item-2">Item 2</a>
+     <a class="nav-link" href="#item-3">Item 3</a>
+     <nav class="nav nav-pills flex-column">
+     <a class="nav-link ms-3 my-1" href="#item-3-1">Item 3-1</a>
+     <a class="nav-link ms-3 my-1" href="#item-3-2">Item 3-2</a>
+     </nav>
+     </nav>
+     </nav>
+     </div>
+
+     <div class="col-9">
+     <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
+     <div id="item-1">
+     <h4>Item 1</h4>
+     <p>...</p>
+     </div>
+     <div id="item-1-1">
+     <h5>Item 1-1</h5>
+     <p>...</p>
+     </div>
+     <div id="item-1-2">
+     <h5>Item 1-2</h5>
+     <p>...</p>
+     </div>
+     <div id="item-2">
+     <h4>Item 2</h4>
+     <p>...</p>
+     </div>
+     <div id="item-3">
+     <h4>Item 3</h4>
+     <p>...</p>
+     </div>
+     <div id="item-3-1">
+     <h5>Item 3-1</h5>
+     <p>...</p>
+     </div>
+     <div id="item-3-2">
+     <h5>Item 3-2</h5>
+     <p>...</p>
+     </div>
+     </div>
+     </div>
+     </div>
+     </div> -->
