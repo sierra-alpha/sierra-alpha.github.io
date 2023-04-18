@@ -12,14 +12,14 @@
                 </a>
                 <hr>
                 <ul class="nav nav-pills flex-column mb-auto">
-                    {% for item in site.data.navbar.links %}
+                    {% for main_page in site.main_pages %}
                     <li class="nav-item">
-                        <a href="{{ item.link }}" class="nav-link text-white">
-                            <img src="/assets/menu-icons/{{ forloop.index }}.svg"
+                        <a href="#{{ forloop.index }}" class="nav-link text-white">
+                            <img src="/assets/main_pages/{{ forloop.index }}/{{ main_page.icon }}"
                                  class="bi pe-nome me-2"
                                  width="32"
                                  height="32">
-                            {{ item.name }}
+                            {{ main_page.name }}
                         </a>
                     </li>
                     {% endfor %}
@@ -45,7 +45,14 @@
         </div>
 
         <div class="col" style="height:100vh;overflow-y: scroll;">
-            <div style="height: 10000px; background-color: red; ">Hi Content will go here</div>
+            <div style="height: 10000px; background-color: red; ">
+
+                {% for main_page in site.main_pages %}
+                <div id="{{ forloop.index }}">
+                    {{ main_page.content }}
+                </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </div>
