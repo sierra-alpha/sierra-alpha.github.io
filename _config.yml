@@ -9,14 +9,13 @@ url:              http://hyde.getpoole.com
 baseurl:          /
 collections_dir:  collections
 collections:
-  - main_pages
-
-defaults:
-  - scope:
-      path: "_main_pages/*.jpg"
-      values:
-        image: true
-        output: true
+  main_pages:
+    output: true
+    icon: icon.svg
+    image: image.jpeg
+    layout: base_page
+  posts:
+    output: true
 
 author:
   name:           'Mark Otto'

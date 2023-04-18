@@ -1,7 +1,5 @@
 ---
 name: Notes
-icon: icon.svg
-image: image.jpeg
-layout: base_page
+published: false
 ---
 ### This is Notes page which will basically be posts

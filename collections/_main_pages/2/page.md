@@ -1,7 +1,5 @@
 ---
 name: Services
-icon: icon.svg
-image: image.jpeg
-layout: base_page
+published: false
 ---
 ### This is a what we do

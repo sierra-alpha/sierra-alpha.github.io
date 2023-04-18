@@ -1,7 +1,5 @@
 ---
 name: Projects
-icon: icon.svg
-image: image.jpeg
-layout: base_page
+published: false
 ---
 ### This is projects page similar to posts
