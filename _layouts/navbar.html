@@ -15,7 +15,7 @@
                     {% for main_page in site.main_pages %}
                     <li class="nav-item">
                         <a href="#{{ forloop.index }}" class="nav-link text-white">
-                            <img src="/assets/main_pages/{{ forloop.index }}/{{ main_page.icon }}"
+                            <img src="{{ main_page.url }}../images/{{ main_page.icon }}"
                                  class="bi pe-nome me-2"
                                  width="32"
                                  height="32">

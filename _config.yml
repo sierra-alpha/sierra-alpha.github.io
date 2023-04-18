@@ -11,11 +11,17 @@ collections_dir:  collections
 collections:
   main_pages:
     output: true
-    icon: icon.svg
-    image: image.jpeg
-    layout: base_page
   posts:
     output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "main_pages"
+    values:
+      icon: icon.svg
+      image: image.jpeg
+      layout: base_page
 
 author:
   name:           'Mark Otto'
