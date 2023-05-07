@@ -53,7 +53,7 @@
         <div data-bs-spy="scroll" data-bs-target="#navbar" class="col"
              tabindex="0" style="height:100vh; overflow-y: scroll;">
           {% for main_page in site.main_pages %}
-          <div id="link-{{ forloop.index }}" style="height: 1000px">
+          <div id="link-{{ forloop.index }}" style="height: 100vh">
             {{ main_page.content }}
           </div>
           {% endfor %}
