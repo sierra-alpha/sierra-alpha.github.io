@@ -1,0 +1,16 @@
+---
+name: Welcome
+backgrounds: backgrounds
+---
+<h1> This is a welcome sight </h1>
+<br>
+<br>
+{% assign url_parts = page.url | split: "/" | reverse | slice: 1, 2 | reverse | join: "/" | append: "/images/image" %}
+{{ url_parts }}
+<br>
+<br>
+{% assign images = site.static_files | where_exp:"item", "item.path contains url_parts" %}
+{% for image in images %}
+{{ image.path }}
+<img src="{{ image.path | replace_first: "_", "/" }}">
+{% endfor %}
