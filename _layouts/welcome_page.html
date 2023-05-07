@@ -1,20 +1,12 @@
 ---
-name: Welcome
-backgrounds: backgrounds
+layout: default
 ---
-<style>
- .containerdiv { float: left; position: relative; } 
- .cornerimage { position: absolute; top: 0; right: 0; } 
-</style>
-
 <div style="height: 100vh; position: relative; float: left, width: 100%">
   {% assign url_parts = page.url | split: "/" | reverse | slice: 1, 2 | reverse | join: "/" | append: "/images/image" %}
   {% assign images = site.static_files | where_exp:"item", "item.path contains url_parts" %}
 
-    <h1 style="position: absolute; z-index: 1"> This is a welcome sight </h1>
+    <h1 style="position: absolute; z-index: 1; margin-top: 30vh; margin-left: 10%">{{ content }}</h1>
     {% for image in images %}
     <figure style="position: absolute; width: 100%; height: 100%; background-size: cover; background-position: center; background-image: url('{{ image.path | replace_first: "_", "/" }}')"></figure>
-
-
     {% endfor %}
 </div>
