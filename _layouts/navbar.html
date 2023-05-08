@@ -42,10 +42,10 @@ layout: default
       </div>
     </div>
 
-    <div data-bs-spy="scroll" data-bs-target="#navbar" class="col"
+    <div data-bs-spy="scroll" data-bs-target="#navbar" class="col m-0"
          tabindex="0" style="height:100vh; overflow-y: scroll;">
       {% for main_page in site.main_pages %}
-      <div id="link-{{ forloop.index }}" style="height: 100vh">
+      <div id="link-{{ forloop.index }}" class="m-0" style="height: 100vh">
         <iframe style="height: 100vh; width: 100%" src="{{ main_page.url }}" title="{{ main_page.name }}"></iframe>
       </div>
       {% endfor %}
