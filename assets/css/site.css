@@ -1,3 +1,16 @@
+@import branding.css
+
+/* Bootstrap overrides, if using this template you probably dont want to
+ * overwrite things here but instead in the branding.css file */
+.nav-pills {
+    --bs-nav-pills-link-active-bg: var(--brand-dark-colour);
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    background-color: var(--brand-dark-colour);
+}
+
+/* Other random site stylings */
 .welcome-bg-holder {
     float: left;
     height: 100vh;
@@ -28,7 +41,7 @@
 }
 
 .welcome-bg-holder div {
-    background-color: var(--bs-primary-bg-subtle);
+    background-color: var(--brand-dark-colour);
     filter: opacity(70%);
     z-index: 1;
 }
