@@ -45,14 +45,47 @@ layout: default
     <div data-bs-spy="scroll" data-bs-target="#navbar" class="col m-0 p-0"
          tabindex="0" style="height:100vh; overflow-y: scroll;">
       {% for main_page in site.main_pages %}
-      <div id="link-{{ forloop.index }}" class="m-0 p-0" style="height: 100vh">
-        <iframe style="height: 100vh; width: 100%" src="{{ main_page.url }}" title="{{ main_page.name }}"></iframe>
-      </div>
-      <svg style="z-index: 5; position: relative, clip-path: polygon()" height="4vh" width="100%"
-        viewBox="0 0 100 100" preserveAspectRatio="none">
-        <polygon points="0,100 0,0 30,0 80,100" style="fill:cyan"></polygon>
-        <polygon points="100,100 100,0 30,0 80,100" style="fill:blue"></polygon>
-      </svg>
+        <div id="link-{{ forloop.index }}" class="m-0 p-0" style="height: 100vh">
+          <iframe style="height: 100vh; width: 100%"
+                  src="{{ main_page.url }}"
+                  title="{{ main_page.name }}">
+          </iframe>
+        </div>
+
+        <!-- This is for the polygons because I don't care enough how they're
+             laid up but want them different but dont want to hardcode them per
+             divider, also makes us robust to more sections if someone wants
+             that. We don't want them on the first or the last -->
+
+        {% unless forloop.first or forloop.last %}
+          {% assign min = 05 %}
+          {% assign max = 40 %}
+          {% assign diff = max | minus: min %}
+          {% assign ran1 = "now" | date: "%N" | modulo: diff | plus: min %}
+          {% assign ran2 = "now" | date: "%N" | modulo: diff | plus: min %}
+          {% assign div1 = ran1 | plus: ran2 %}
+          {% assign div2 = 100 | minus: ran1 | minus: ran2 %}
+
+          <svg class="m-0 p-0" style="z-index: 5;
+                      position: relative;
+                      clip-path: polygon(
+                      0% {{ ran1 }}%,
+                      100% {{ ran2 }}%,
+                      100% {{ 100 | minus: ran2 }}%,
+                      0% {{ 100 | minus: ran1 }}%
+                      )"
+               height="4vw"
+               width="100%"
+               viewBox="0 0 100 100"
+               preserveAspectRatio="none">
+            <polygon points="0,100 0,0 {{ div1 }},0 {{ div2 }},100"
+                     style="fill:var(--brand-dark-colour)">
+            </polygon>
+            <polygon points="100,100 100,0 {{ div1 }},0 {{ div2 }},100"
+                     style="fill:var(--brand-light-colour)">
+            </polygon>
+          </svg>
+        {% endunless %}
       {% endfor %}
     </div>
   </div>
