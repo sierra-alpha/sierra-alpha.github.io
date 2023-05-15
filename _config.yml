@@ -8,7 +8,7 @@ github_username: sierra-alpha
 ### Build settings ###
 
 url: https://sierra-alpha.github.io
-
+# Do I need to update this everytime the theme changes?
 remote_theme: sierra-alpha/hyde
 
 plugins:
