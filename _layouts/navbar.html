@@ -52,29 +52,42 @@ layout: default
           </iframe>
         </div>
 
-        <!-- This is for the polygons because I don't care enough how they're
-             laid up but want them different but dont want to hardcode them per
-             divider, also makes us robust to more sections if someone wants
-             that. We don't want them on the first or the last -->
+        {% comment %}
+          ######################################################################
+          # the below is for the polygons because I don't care enough how they're
+          # laid up but want them different but dont want to hardcode them per
+          # divider, also makes us robust to more sections if someone wants
+          # that. We don't want them on the first or the last
+        ######################################################################
+        {% endcomment %}
 
+        {% assign flipped = 0 %}
         {% unless forloop.first or forloop.last %}
-          {% assign min = 05 %}
-          {% assign max = 40 %}
+          {% assign min = 30 %}
+          {% assign max = 45 %}
           {% assign diff = max | minus: min %}
           {% assign ran1 = "now" | date: "%N" | modulo: diff | plus: min %}
-          {% assign ran2 = "now" | date: "%N" | modulo: diff | plus: min %}
-          {% assign div1 = ran1 | plus: ran2 %}
-          {% assign div2 = 100 | minus: ran1 | minus: ran2 %}
+          {% assign ran2 = 50 | minus: ran1 %}
+
+          {% assign flipped = forloop.index | modulo: 2 %}
+          {% if flipped == 0 %}
+            {% assign temp = ran1 %}
+            {% assign ran1 = ran2 %}
+            {% assign ran2 = temp %}
+          {% endif %}
+
+        {% assign div1 = ran1 %}
+        {% assign div2 = 100 | minus: ran1 %}
 
           <svg class="m-0 p-0" style="z-index: 5;
                       position: relative;
                       clip-path: polygon(
                       0% {{ ran1 }}%,
                       100% {{ ran2 }}%,
-                      100% {{ 100 | minus: ran2 }}%,
-                      0% {{ 100 | minus: ran1 }}%
+                      100% {{ ran2 | times: 2 }}%,
+                      0% {{ ran1 | times: 2 }}%
                       )"
-               height="4vw"
+               height="6vw"
                width="100%"
                viewBox="0 0 100 100"
                preserveAspectRatio="none">
