@@ -18,4 +18,3 @@ exclude:
   - vendor/
   - README.md
   - Gemfile
-  - Gemfile
