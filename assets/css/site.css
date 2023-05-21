@@ -10,6 +10,16 @@
     background-color: var(--brand-dark-colour);
 }
 
+.btn-dark {
+    background-color: var(--brand-dark-colour);
+    border-color: var(--brand-dark-colour);
+}
+
+.btn:active, .btn:hover {
+    background-color: var(--brand-light-colour);
+    border-color: var(--brand-light-colour);
+}
+
 /* Other random site stylings */
 .welcome-bg-holder {
     float: left;
@@ -40,14 +50,16 @@
 }
 
 #content-holder {
+    background-color: unset;
+    color: white;
+    filter: unset;
+    height: fit-content;
     margin-left: 10%;
     margin-top: 30vh;
     position: absolute;
-    z-index: 2;
-    background-color: unset;
-    color: white;
+    text-shadow: 4px 4px 12px var(--brand-dark-colour);
     width: fit-content;
-    height: fit-content;
+    z-index: 2;
 }
 
 @keyframes
