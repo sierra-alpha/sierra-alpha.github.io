@@ -18,13 +18,6 @@
     width: 100%;
 }
 
-.welcome-bg-holder h1 {
-    margin-left: 10%;
-    margin-top: 30vh;
-    position: absolute;
-    z-index: 2;
-}
-
 .welcome-bg-holder figure, .welcome-bg-holder div {
     background-position: center;
     background-size: cover;
@@ -44,6 +37,17 @@
     background-color: var(--brand-dark-colour);
     filter: opacity(70%);
     z-index: 1;
+}
+
+#content-holder {
+    margin-left: 10%;
+    margin-top: 30vh;
+    position: absolute;
+    z-index: 2;
+    background-color: unset;
+    color: white;
+    width: fit-content;
+    height: fit-content;
 }
 
 @keyframes

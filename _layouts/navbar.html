@@ -11,8 +11,9 @@ layout: default
         </a>
         <hr>
         <div id="navbar" class="nav nav-pills flex-column mb-auto">
-          {% for main_page in site.main_pages %}
-          <a href="#link-{{ forloop.index }}"
+          {% assign menu_bar_pages = site.main_pages | shift %}
+          {% for main_page in menu_bar_pages %}
+          <a href="#link-{{ forloop.index | plus: 1}}"
              class="nav-link icon-link icon-link-hover link-light link-body-emphasis fs-6"
              style="--bs-icon-link-transform: scale(0.9); --bs-icon-link-gap: .5rem;">
             <img src="{{ main_page.url }}../images/{{ main_page.icon }}"
