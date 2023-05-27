@@ -1,0 +1,106 @@
+---
+layout: default
+---
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-auto" style="width: 200px;">
+      <div class="d-flex flex-column py-2" style="height: 100vh; overflow-y: scroll;">
+        <a href="/" class="d-flex align-items-center mt-2 mb-md-0 me-md-auto">
+          <img class="rounded" src="{{ site.data.navbar.logo_location }}"
+               style="background-color:white;" width="100%">
+        </a>
+        <hr>
+        <div id="navbar" class="nav nav-pills flex-column mb-auto">
+          {% assign menu_bar_pages = site.main_pages | shift %}
+          {% for main_page in menu_bar_pages %}
+          <a href="#link-{{ forloop.index | plus: 1}}"
+             class="nav-link icon-link icon-link-hover link-light link-body-emphasis fs-6"
+             style="--bs-icon-link-transform: scale(0.9); --bs-icon-link-gap: .5rem;">
+            <img src="{{ main_page.url }}/../images/{{ main_page.icon }}"
+                 class="bi pe-none me-2 fs-1">
+            {{ main_page.name }}
+          </a>
+          {% endfor %}
+        </div>
+        <hr>
+        <div class="dropdown">
+          <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+             data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://github.com/mdo.png" alt=""
+                 class="rounded-circle me-2" width="32" height="32">
+            <strong>mdo</strong>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark text-small shadow" style="">
+            <li><a class="dropdown-item" href="#">New project...</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div data-bs-spy="scroll" data-bs-target="#navbar" class="col m-0 p-0"
+         tabindex="0" style="height:100vh; overflow-y: scroll;">
+      {% for main_page in site.main_pages %}
+        <div id="link-{{ forloop.index }}" class="" style="height: 100vh; margin: -6vh; padding: 6vh;">
+          <iframe style="height: 100vh; width: 100%"
+                  src="{{ main_page.url }}"
+                  title="{{ main_page.name }}">
+          </iframe>
+        </div>
+
+        {% comment %}
+          ######################################################################
+          # the below is for the polygons because I don't care enough how they're
+          # laid up but want them different but dont want to hardcode them per
+          # divider, also makes us robust to more sections if someone wants
+          # that. We don't want them on the first or the last
+        ######################################################################
+        {% endcomment %}
+
+        {% assign flipped = 0 %}
+        {% unless forloop.first or forloop.last %}
+          {% assign min = 30 %}
+          {% assign max = 45 %}
+          {% assign diff = max | minus: min %}
+          {% assign ran1 = "now" | date: "%N" | modulo: diff | plus: min %}
+          {% assign ran2 = 50 | minus: ran1 %}
+
+          {% assign flipped = forloop.index | modulo: 2 %}
+          {% if flipped == 0 %}
+            {% assign temp = ran1 %}
+            {% assign ran1 = ran2 %}
+            {% assign ran2 = temp %}
+          {% endif %}
+
+        {% assign div1 = ran1 %}
+        {% assign div2 = 100 | minus: ran1 %}
+
+          <svg class="m-0 p-0" style="z-index: 5;
+                      position: relative;
+                      clip-path: polygon(
+                      0% {{ ran1 }}%,
+                      100% {{ ran2 }}%,
+                      100% {{ ran2 | times: 2 }}%,
+                      0% {{ ran1 | times: 2 }}%
+                      )"
+               height="6vw"
+               width="100%"
+               viewBox="0 0 100 100"
+               preserveAspectRatio="none">
+            <polygon points="0,100 0,0 {{ div1 }},0 {{ div2 }},100"
+                     style="fill:var(--brand-dark-colour)">
+            </polygon>
+            <polygon points="100,100 100,0 {{ div1 }},0 {{ div2 }},100"
+                     style="fill:var(--brand-light-colour)">
+            </polygon>
+          </svg>
+        {% endunless %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

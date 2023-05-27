@@ -29,11 +29,24 @@ domainn: sierraalpha.co.nz # if you want to force HTTPS, specify the domain with
 url: https://sierraalpha.co.nz # the base hostname and protocol for your site, e.g. http://example.com
 
 baseurl: "" # the subpath of your site, e.g. /blog
-twitter_username: jekyllrb
-github_username:  jekyll
+github_username:  sierra-alpha
 
-# Build settings
-theme: minima
+collections_dir:  collections
+collections:
+  main_pages:
+    output: true
+  posts:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "main_pages"
+    values:
+      icon: icon.svg
+      image: image.jpeg
+      layout: base_page
+
 plugins:
   - jekyll-feed
 

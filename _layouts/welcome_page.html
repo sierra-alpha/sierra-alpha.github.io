@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<div class="welcome-bg-holder">
+  {% assign url_parts = page.url | split: "/" | reverse | slice: 1, 2 | reverse | join: "/" | append: "/images/image" %}
+  {% assign main_pages = site.collections | where: "label", "main_pages" | first %}
+  {% assign images = main_pages.files | where_exp: "item", "item.path contains url_parts" %}
+
+  <div id="content-holder">{{ content }}</div>
+    {% assign delay = 0 | minus: images.size | divided_by: 2 %}
+    {% assign delay_plus = 60 | divided_by: images.size %}
+    {% for image in images %}
+      <figure style="background-image: url('{{ image.path | replace_first: "_", "/" }}'); animation-delay: {{ delay }}s"></figure>
+      {% assign delay = delay | plus: delay_plus %}
+    {% endfor %}
+    <div></div>
+</div>
