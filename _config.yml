@@ -5,7 +5,7 @@ permalink:        pretty
 title:            SierraAlpha
 tagline:          'A Jekyll theme'
 description:      'A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
-url:              http://hyde.getpoole.com
+url:              https://sierraalpha.co.nz
 baseurl:          /
 collections_dir:  collections
 collections:
@@ -24,8 +24,8 @@ defaults:
       layout: base_page
 
 author:
-  name:           'Mark Otto'
-  url:            https://twitter.com/mdo
+  name:           'Shaun Alexander'
+  url:            https://sierraalpha.co.nz
 
 paginate:         5
 
@@ -33,7 +33,7 @@ paginate:         5
 version:          2.1.1
 
 github:
-  repo:           https://github.com/poole/hyde
+  repo:           https://github.com/sierra-alpha/sierra-alpha.github.io
 
 plugins:
   - jekyll-paginate
