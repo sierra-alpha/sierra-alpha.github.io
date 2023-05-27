@@ -1,9 +1,30 @@
 ---
 name: Services
 ---
-# Develop
-## Simple, Beautiful, Elegant
+# Services
+## more than just code
 
-_At Sierra Alpha Innovations, we believe any problem can be solved. But what sets us apart is the attention to detail and the commitment to meeting your needs. We don't stop till the perfect solution has been realised for you and your clients._
+Software development starts with the old adage _"think then code"_
 
-Sierra Alpha Innovations is based on solid foundations. Customer satisfaction is what we strive for. We follow industry standard best practises and pride ourselves in our attention to detail, elegant yet simple to maintain code and staying at the forefront of emerging technologies.
+The world of software development is so broad in nature here is our focus:
+
+    Iterative Languages
+        C/C++
+        Java
+        Node JS
+
+    Functional Languages
+        Prolog
+        Haskel
+
+    Specific Areas
+        Increasing code efficiency
+        Socket/network programming
+        Multithreading and concurrency
+        Business applications
+        Web scraping
+        Cross platform
+        Embedded systems / firmware interfacing
+        Automation
+
+Feel free to get in touch for any reason, our team loves a challenge and a reason to adopt new technology. We learn fast!

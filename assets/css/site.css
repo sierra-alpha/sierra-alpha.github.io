@@ -62,6 +62,34 @@
     z-index: 2;
 }
 
+.page {
+    overflow: auto;
+}
+
+.first-section {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.second-section {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    margin-bottom: -3vh;
+    padding-bottom: 3vh;
+}
+
+.other-sections {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    margin-top: -3vh;
+    margin-bottom: -3vh;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+
 @keyframes
 imageAnimation {
     0% {
