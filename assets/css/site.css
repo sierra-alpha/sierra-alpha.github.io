@@ -21,6 +21,15 @@
 }
 
 /* Other random site stylings */
+
+:root {
+    background-color: var(--bs-body-bg);
+}
+
+iframe {
+    background-color: var(--bs-body-bg);
+}
+
 .welcome-bg-holder {
     float: left;
     height: 100vh;
@@ -63,7 +72,8 @@
 }
 
 .page {
-    overflow: auto;
+    margin: 1em;
+    margin-bottom: 3.2vh;
 }
 
 .first-section {
@@ -76,18 +86,26 @@
     height: 100vh;
     margin: 0;
     padding: 0;
-    margin-bottom: -3vh;
-    padding-bottom: 3vh;
+    margin-bottom: -3.2vh;
+    padding-bottom: 3.2vh;
 }
 
 .other-sections {
     height: 100vh;
     margin: 0;
     padding: 0;
-    margin-top: -3vh;
-    margin-bottom: -3vh;
-    padding-top: 3vh;
-    padding-bottom: 3vh;
+    margin-top: -3.2vh;
+    margin-bottom: -3.2vh;
+    padding-top: 3.2vh;
+    padding-bottom: 3.2vh;
+}
+
+.last-section {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    margin-top: -3.2vh;
+    padding-top: 3.2vh;
 }
 
 @keyframes

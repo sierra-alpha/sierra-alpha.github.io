@@ -42,6 +42,8 @@ layout: default
         </div>
       </div>
     </div>
+    <div style="color: var(--brand-dark-colour);"
+         class="vr p-0 m-0 ps-1 opacity-100"></div>
 
     <div data-bs-spy="scroll" data-bs-target="#navbar" class="col m-0 p-0"
          tabindex="0" style="height:100vh; overflow-y: scroll;">
@@ -51,11 +53,13 @@ layout: default
            class="first-section"
            {% elsif forloop.index == 2 %}
            class="second-section"
+           {% elsif forloop.last %}
+           class="last-section"
            {% else %}
            class="other-sections"
            {% endif %}
         >
-          <iframe style="height: 100vh; width: 100%"
+          <iframe style="height: 100vh; width: 100%; overflow: auto;"
                   src="{{ main_page.url }}"
                   title="{{ main_page.name }}">
           </iframe>
@@ -88,15 +92,25 @@ layout: default
         {% assign div1 = ran1 %}
         {% assign div2 = 100 | minus: ran1 %}
 
+        {% assign p1 = 45 | minus: ran1 %}
+        {% assign p2 = 45 | minus: ran2 %}
+        {% assign p3 = 55 | plus: ran2 %}
+        {% assign p4 = 55 | plus: ran1 %}
+
+        <div class="m-0 p-0"
+             style="z-index: 4;
+                    background-colour: var(--bs-body-bg);
+                    ">
           <svg class="m-0 p-0" style="z-index: 5;
                       position: relative;
                       clip-path: polygon(
-                      0% {{ ran1 }}%,
-                      100% {{ ran2 }}%,
-                      100% {{ ran2 | times: 2 }}%,
-                      0% {{ ran1 | times: 2 }}%
+                      0% {{ p1 }}%,
+                      100% {{ p2 }}%,
+                      100% 100%,
+                      0% 100%
                       )"
-               height="6vw"
+               height="4vw"
+               max-height="10px"
                width="100%"
                viewBox="0 0 100 100"
                preserveAspectRatio="none">
@@ -106,7 +120,11 @@ layout: default
             <polygon points="100,100 100,0 {{ div1 }},0 {{ div2 }},100"
                      style="fill:var(--brand-light-colour)">
             </polygon>
+            <polygon points="0,{{ p3 }} 0,{{ p4 }} 100,100 0,100"
+                     style="fill:var(--bs-body-bg)">
+            </polygon>
           </svg>
+        </div>
         {% endunless %}
       {% endfor %}
     </div>
