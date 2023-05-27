@@ -1,16 +1,18 @@
 ---
 layout: default
 ---
-<div class="page container">
-  <div class="row">
-    <div class="col-6">
-      {{ content }}
-    </div>
-    <div class="col-6">
-      {% assign url_parts = page.url | split: "/" | reverse | slice: 1, 2 | reverse | join: "/" | append: "/images/image" %}
-      {% assign main_pages = site.collections | where: "label", "main_pages" | first %}
-      {% assign image = main_pages.files | where_exp: "item", "item.path contains url_parts" | first %}
-      <img src="{{ image.path | replace_first: "_", "/" }}">
+{% assign url_parts = page.url | split: "/" | reverse | slice: 1, 2 | reverse | join: "/" | append: "/images/image" %}
+{% assign main_pages = site.collections | where: "label", "main_pages" | first %}
+{% assign image = main_pages.files | where_exp: "item", "item.path contains url_parts" | first %}
+
+<div class="no-scroll-body-faker">
+  <div class="container page" style="background-image: url({{ image.path | replace_first: "_", "/" }})">
+    <div class="row">
+      <div class="col-6 page-content">
+        {{ content }}
+      </div>
+      <div class="col-6">
+      </div>
     </div>
   </div>
 </div>

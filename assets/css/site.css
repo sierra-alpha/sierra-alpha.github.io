@@ -30,6 +30,13 @@ iframe {
     background-color: var(--bs-body-bg);
 }
 
+.no-scroll-body-faker {
+    margin: 0;
+    padding: 0;
+    overflow: clip;
+    height: 100vh;
+}
+
 .welcome-bg-holder {
     float: left;
     height: 100vh;
@@ -72,10 +79,23 @@ iframe {
 }
 
 .page {
-    margin: 1em;
-    margin-bottom: 5vw;
-    padding-bottom: 1em;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: clip;
+    max-width: unset;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.page-content {
+    height: 100vh;
+    margin: 0;
+    padding: 1em;
+    padding-bottom: 5vw;
     overflow: auto;
+    background-color: var(--bs-body-bg);
 }
 
 .first-section {
