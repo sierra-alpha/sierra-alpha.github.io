@@ -28,7 +28,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 domainn: sierraalpha.co.nz # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
 url: https://sierraalpha.co.nz # the base hostname and protocol for your site, e.g. http://example.com
 
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 github_username:  sierra-alpha
 
 collections_dir:  collections
