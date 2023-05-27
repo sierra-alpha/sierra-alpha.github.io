@@ -1,4 +1,4 @@
 ---
 name: Notes
 ---
-### This is Notes page which will basically be posts
+# Just a collection of Notes that I'm taking to help my future self, from my past self

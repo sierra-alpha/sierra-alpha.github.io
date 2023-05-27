@@ -73,7 +73,8 @@ iframe {
 
 .page {
     margin: 1em;
-    margin-bottom: 4vh;
+    margin-bottom: 5vw;
+    padding-bottom: 1em;
     overflow: auto;
 }
 
@@ -87,26 +88,26 @@ iframe {
     height: 100vh;
     margin: 0;
     padding: 0;
-    margin-bottom: -3.0vh;
-    padding-bottom: 3.0vh;
+    margin-bottom: -2.4vw;
+    padding-bottom: 2.4vw;
 }
 
 .other-sections {
     height: 100vh;
     margin: 0;
     padding: 0;
-    margin-top: -3.0vh;
-    margin-bottom: -3.0vh;
-    padding-top: 3.0vh;
-    padding-bottom: 3.0vh;
+    margin-top: -2.4vw;
+    margin-bottom: -2.4vw;
+    padding-top: 2.4vw;
+    padding-bottom: 2.4vw;
 }
 
 .last-section {
     height: 100vh;
     margin: 0;
     padding: 0;
-    margin-top: -3.2vh;
-    padding-top: 3.2vh;
+    margin-top: -2.4vh;
+    padding-top: 2.4vh;
 }
 
 @keyframes
