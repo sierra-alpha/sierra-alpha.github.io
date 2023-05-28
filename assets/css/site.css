@@ -94,8 +94,20 @@ iframe {
     margin: 0;
     padding: 1em;
     padding-bottom: 5vw;
+    padding-top: 5vw;
     overflow: auto;
     background-color: var(--bs-body-bg);
+}
+
+.page-image{
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: clip;
+    max-width: unset;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .first-section {
@@ -109,7 +121,6 @@ iframe {
     margin: 0;
     padding: 0;
     margin-bottom: -2.4vw;
-    padding-bottom: 2.4vw;
 }
 
 .other-sections {
@@ -118,8 +129,6 @@ iframe {
     padding: 0;
     margin-top: -2.4vw;
     margin-bottom: -2.4vw;
-    padding-top: 2.4vw;
-    padding-bottom: 2.4vw;
 }
 
 .last-section {
@@ -127,7 +136,6 @@ iframe {
     margin: 0;
     padding: 0;
     margin-top: -2.4vh;
-    padding-top: 2.4vh;
 }
 
 @keyframes
