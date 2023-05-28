@@ -109,8 +109,8 @@ layout: default
                       clip-path: polygon(
                       0% {{ p1 }}%,
                       100% {{ p2 }}%,
-                      100% 100%,
-                      0% 100%
+                      100% {{ p3 }}%,
+                      0% {{ p4 }}%
                       )"
                height="5vw"
                width="100%"
@@ -121,9 +121,6 @@ layout: default
             </polygon>
             <polygon points="100,100 100,0 {{ div1 }},0 {{ div2 }},100"
                      style="fill:var(--brand-light-colour)">
-            </polygon>
-            <polygon points="0,{{ p3 }} 0,{{ p4 }} 100,101 0,101"
-                     style="fill:var(--bs-body-bg)">
             </polygon>
           </svg>
         </div>
