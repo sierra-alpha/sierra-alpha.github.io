@@ -76,11 +76,11 @@ layout: default
 
         {% assign flipped = 0 %}
         {% unless forloop.first or forloop.last %}
-          {% assign min = 20 %}
+          {% assign min = 10 %}
           {% assign max = 40 %}
           {% assign diff = max | minus: min %}
           {% assign ran1 = "now" | date: "%N" | modulo: diff | plus: min %}
-          {% assign ran2 = 50 | minus: ran1 %}
+        {% assign ran2 = 50 | minus: ran1 %}
         {% assign ran3 = 50 | plus: ran1 %}
         {% assign ran4 = 100 | minus: ran1 %}
 
