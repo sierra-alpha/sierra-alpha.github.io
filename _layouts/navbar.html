@@ -3,50 +3,64 @@ layout: default
 ---
 <div class="container-fluid">
   <div class="row">
-    <div class="col-auto" style="width: 200px;">
-      <div class="d-flex flex-column py-2" style="height: 100vh; overflow-y: scroll;">
-        <a href="/" class="d-flex align-items-center mt-2 mb-md-0 me-md-auto">
-          <img class="rounded" src="{{ site.data.navbar.logo_location }}"
+    <!-- small navbar -->
+    <div class="col-auto d-none d-sm-block d-lg-none">
+      <div class="d-flex flex-column py-2 overflow-x-hidden" style="height: 100vh; overflow-y: scroll; width: 60px;">
+        <a href="/" class="d-flex align-items-center mt-2 mb-md-0 me-md-auto mx-auto">
+          <img class="rounded" src="/assets/small-logo.png"
                style="background-color:white;" width="100%">
         </a>
+
         <hr>
-        <div id="navbar" class="nav nav-pills flex-column mb-auto">
+
+        <div id="navbar-small" class="nav nav-pills flex-column mx-auto mb-auto">
           {% assign menu_bar_pages = site.main_pages | shift %}
           {% for main_page in menu_bar_pages %}
-          <a href="#link-{{ forloop.index | plus: 1}}"
+          <a id="navbar-small-link-{{ forloop.index | plus: 1}}"
+            href="#link-{{ forloop.index | plus: 1}}"
              class="nav-link icon-link icon-link-hover link-light link-body-emphasis fs-6"
-             style="--bs-icon-link-transform: scale(0.9); --bs-icon-link-gap: .5rem;">
+             data-toggle="tooltip"
+             title="{{ main_page.name }}"
+             style="--bs-icon-link-transform: scale(0.9); --bs-icon-link-gap: 0px;">
             <img src="{{ main_page.url }}/../images/{{ main_page.icon }}"
-                 class="bi pe-none me-2 fs-1">
+                 class="bi pe-none me-2 fs-2">
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <!-- large nav bar -->
+    <div class="col-auto d-none d-lg-block" >
+      <div class="d-flex flex-column py-2" style="height: 100vh; overflow-y: scroll; width: 180px;">
+        <a href="/" class="d-flex align-items-center mt-2 mb-md-0 me-md-auto mx-auto">
+          <img class="rounded" src="/assets/logo.png"
+               style="background-color:white;" width="100%">
+        </a>
+
+        <hr>
+
+        <div id="navbar" class="nav nav-pills flex-column mx-auto mb-auto">
+          {% assign menu_bar_pages = site.main_pages | shift %}
+          {% for main_page in menu_bar_pages %}
+          <a id="navbar-link-{{ forloop.index | plus: 1}}"
+            href="#link-{{ forloop.index | plus: 1}}"
+             class="nav-link icon-link icon-link-hover link-light link-body-emphasis fs-6"
+             style="--bs-icon-link-transform: scale(0.9)">
+            <img src="{{ main_page.url }}/../images/{{ main_page.icon }}"
+                 class="bi pe-none me-2 fs-2">
             {{ main_page.name }}
           </a>
           {% endfor %}
         </div>
-        <hr>
-        <div class="dropdown">
-          <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-             data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://github.com/{{ site.github_username }}.png" alt=""
-                 class="rounded-circle me-2" width="32" height="32">
-            <strong>{{ site.github_username }}</strong>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark text-small shadow" style="">
-            <li><a class="dropdown-item" href="#">New project...</a></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
-          </ul>
-        </div>
       </div>
     </div>
     <div style="color: var(--brand-dark-colour);"
-         class="vr p-0 m-0 ps-1 opacity-100"></div>
+         class="vr p-0 m-0 ps-1 opacity-100 d-none d-sm-block"></div>
 
-    <div data-bs-spy="scroll" data-bs-target="#navbar" class="col m-0 p-0"
-         tabindex="0" style="height:100vh; overflow-y: scroll;">
+
+      <div data-bs-spy="scroll" data-bs-target="#navbar" class="col m-0 p-0"
+           tabindex="0" style="height:100vh; overflow-y: scroll;">
       {% for main_page in site.main_pages %}
       <div id="link-{{ forloop.index }}"
            {% if forloop.first %}
@@ -102,7 +116,7 @@ layout: default
 
         <div class="m-0 p-0"
              style="z-index: 4;
-                    background-colour: var(--bs-body-bg);
+                    background-color: var(--bs-body-bg);
                     ">
           <svg class="m-0 p-0" style="z-index: 5;
                       position: relative;
@@ -128,4 +142,5 @@ layout: default
       {% endfor %}
     </div>
   </div>
+  <script src="{{ base.url | prepend: site.url }}/assets/js/scrollspy-multitarget.js"></script>
 </div>
