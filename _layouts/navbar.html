@@ -7,7 +7,7 @@ layout: default
     <div class="col-auto d-none d-sm-block d-lg-none">
       <div class="d-flex flex-column py-2 overflow-x-hidden" style="height: 100vh; overflow-y: scroll; width: 60px;">
         <a href="/" class="d-flex align-items-center mt-2 mb-md-0 me-md-auto mx-auto">
-          <img class="rounded" src="/assets/small-logo.png"
+          <img class="rounded" src="/assets/images/small-logo.png"
                style="background-color:white;" width="100%">
         </a>
 
@@ -17,7 +17,7 @@ layout: default
           {% assign menu_bar_pages = site.main_pages | shift %}
           {% for main_page in menu_bar_pages %}
           <a id="navbar-small-link-{{ forloop.index | plus: 1}}"
-            href="#link-{{ forloop.index | plus: 1}}"
+             href="#link-{{ forloop.index | plus: 1}}"
              class="nav-link icon-link icon-link-hover link-light link-body-emphasis fs-6"
              data-toggle="tooltip"
              title="{{ main_page.name }}"
@@ -34,7 +34,7 @@ layout: default
     <div class="col-auto d-none d-lg-block" >
       <div class="d-flex flex-column py-2" style="height: 100vh; overflow-y: scroll; width: 180px;">
         <a href="/" class="d-flex align-items-center mt-2 mb-md-0 me-md-auto mx-auto">
-          <img class="rounded" src="/assets/logo.png"
+          <img class="rounded" src="/assets/images/logo.png"
                style="background-color:white;" width="100%">
         </a>
 
@@ -44,7 +44,7 @@ layout: default
           {% assign menu_bar_pages = site.main_pages | shift %}
           {% for main_page in menu_bar_pages %}
           <a id="navbar-link-{{ forloop.index | plus: 1}}"
-            href="#link-{{ forloop.index | plus: 1}}"
+             href="#link-{{ forloop.index | plus: 1}}"
              class="nav-link icon-link icon-link-hover link-light link-body-emphasis fs-6"
              style="--bs-icon-link-transform: scale(0.9)">
             <img src="{{ main_page.url }}/../images/{{ main_page.icon }}"
@@ -73,7 +73,7 @@ layout: default
            class="other-sections"
            {% endif %}
         >
-          <iframe style="height: 100vh; width: 100%; overflow: auto;"
+          <iframe style="height: fit-content; min-height: 100vh; width: 100%; overflow: auto;"
                   src="{{ main_page.url }}"
                   title="{{ main_page.name }}">
           </iframe>
