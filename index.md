@@ -1,4 +1,4 @@
 ---
 layout: navbar
-title: {{ site.title }} 
+title: {{ site.title }}
 ---
