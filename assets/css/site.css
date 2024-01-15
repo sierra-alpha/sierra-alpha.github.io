@@ -1,5 +1,7 @@
 @import branding.css
 
+
+
 /* Bootstrap overrides, if using this template you probably dont want to
  * overwrite things here but instead in the branding.css file */
 .nav-pills {
@@ -21,6 +23,13 @@
 }
 
 /* Other random site stylings */
+html {
+    overscroll-behavior: none;
+}
+
+body {
+    overscroll-behavior: none;
+}
 
 :root {
     background-color: var(--bs-body-bg);
@@ -95,11 +104,11 @@ iframe {
     padding: 2em;
     padding-bottom: 2.7vw;
     padding-top: 2.7vw;
-    overflow: auto;
+    overflow: hidden;
     background-color: var(--bs-body-bg);
 }
 
-.page-image{
+.page-image {
     height: 100vh;
     margin: 0;
     padding: 0;
@@ -110,10 +119,31 @@ iframe {
     background-position: center;
 }
 
+i.base-page.bi.bi-arrow-up-circle-fill, i.base-page.bi.bi-arrow-up-circle {
+    top: 20px;
+}
+
+i.base-page.bi.bi-arrow-down-circle-fill, i.base-page.bi.bi-arrow-down-circle {
+    bottom: 20px;
+}
+
+i.base-page.bi.bi-arrow-up-circle-fill, i.base-page.bi.bi-arrow-down-circle-fill,
+i.base-page.bi.bi-arrow-up-circle, i.base-page.bi.bi-arrow-down-circle {
+    position: absolute;
+    right: calc(50% + 20px);
+    font-size: xx-large;
+    visibility: hidden;
+}
+
+#page-holder {
+    scroll-snap-type: y mandatory;
+}
+
 .first-section {
     height: 100vh;
     margin: 0;
     padding: 0;
+    scroll-snap-align: center;
 }
 
 .second-section {
@@ -121,6 +151,7 @@ iframe {
     margin: 0;
     padding: 0;
     margin-bottom: -2.4vw;
+    scroll-snap-align: center;
 }
 
 .other-sections {
@@ -129,6 +160,7 @@ iframe {
     padding: 0;
     margin-top: -2.4vw;
     margin-bottom: -2.4vw;
+    scroll-snap-align: center;
 }
 
 .last-section {
@@ -136,6 +168,7 @@ iframe {
     margin: 0;
     padding: 0;
     margin-top: -2.4vw;
+    scroll-snap-align: center;
 }
 
 @keyframes

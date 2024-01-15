@@ -59,7 +59,7 @@ layout: default
          class="vr p-0 m-0 ps-1 opacity-100 d-none d-sm-block"></div>
 
 
-      <div data-bs-spy="scroll" data-bs-target="#navbar" class="col m-0 p-0"
+      <div id="page-holder" data-bs-spy="scroll" data-bs-target="#navbar" class="col m-0 p-0" dir="ltr"
            tabindex="0" style="height:100vh; overflow-y: scroll;">
       {% for main_page in site.main_pages %}
       <div id="link-{{ forloop.index }}"
@@ -77,10 +77,6 @@ layout: default
             style="height: auto; min-height: 100vh; width: 100%; overflow: auto;"
             src="{{ main_page.url }}"
             title="{{ main_page.name }}"
-            frameborder=0
-            <!-- seamless="true" -->
-            sandbox="allow-same-origin"
-            onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));'
           >
           </iframe>
         </div>
