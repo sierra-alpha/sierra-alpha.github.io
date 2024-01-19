@@ -1,192 +1,211 @@
 @import branding.css
-
-/* Bootstrap overrides, if using this template you probably dont want to
+  /* Bootstrap overrides, if using this template you probably dont want to
  * overwrite things here but instead in the branding.css file */
-.nav-pills {
-    --bs-nav-pills-link-active-bg: var(--brand-dark-colour);
+  .nav-pills {
+  --bs-nav-pills-link-active-bg: var(--brand-dark-colour);
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-    background-color: var(--brand-dark-colour);
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: var(--brand-dark-colour);
 }
 
 .btn-dark {
-    background-color: var(--brand-dark-colour);
-    border-color: var(--brand-dark-colour);
+  background-color: var(--brand-dark-colour);
+  border-color: var(--brand-dark-colour);
 }
 
-.btn:active, .btn:hover {
-    background-color: var(--brand-light-colour);
-    border-color: var(--brand-light-colour);
+.btn:active,
+.btn:hover {
+  background-color: var(--brand-light-colour);
+  border-color: var(--brand-light-colour);
 }
 
 /* Other random site stylings */
 html {
-    overscroll-behavior: none;
+  overscroll-behavior: none;
 }
 
 body {
-    overscroll-behavior: none;
+  overscroll-behavior: none;
 }
 
 :root {
-    background-color: var(--bs-body-bg);
+  background-color: var(--bs-body-bg);
 }
 
 iframe {
-    background-color: var(--bs-body-bg);
+  background-color: var(--bs-body-bg);
 }
 
 .no-scroll-body-faker {
-    margin: 0;
-    padding: 0;
-    overflow: clip;
-    height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: clip;
+  height: 100vh;
 }
 
 .welcome-bg-holder {
-    float: left;
-    height: 100vh;
-    position: relative;
-    width: 100%;
+  float: left;
+  height: 100vh;
+  position: relative;
+  width: 100%;
 }
 
-.welcome-bg-holder figure, .welcome-bg-holder div {
-    background-position: center;
-    background-size: cover;
-    height: 100%;
-    position: absolute;
-    width: 100%;
+.welcome-bg-holder figure,
+.welcome-bg-holder div {
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  position: absolute;
+  width: 100%;
 }
 
 .welcome-bg-holder > figure {
-    animation: imageAnimation 60s linear infinite 0s;
-    backface-visibility: hidden;
-    color: transparent;
-    opacity: 0;
+  animation: imageAnimation 60s linear infinite 0s;
+  backface-visibility: hidden;
+  color: transparent;
+  opacity: 0;
 }
 
 .welcome-bg-holder div {
-    background-color: var(--brand-dark-colour);
-    filter: opacity(70%);
-    z-index: 1;
+  background-color: var(--brand-dark-colour);
+  filter: opacity(70%);
+  z-index: 1;
 }
 
 #content-holder {
-    background-color: unset;
-    color: white;
-    filter: unset;
-    height: fit-content;
-    margin-left: 10%;
-    margin-top: 30vh;
-    position: absolute;
-    text-shadow: 4px 4px 12px var(--brand-dark-colour);
-    width: fit-content;
-    z-index: 2;
+  background-color: unset;
+  color: white;
+  filter: unset;
+  height: fit-content;
+  margin-left: 10%;
+  margin-top: 30vh;
+  position: absolute;
+  text-shadow: 4px 4px 12px var(--brand-dark-colour);
+  width: fit-content;
+  z-index: 2;
 }
 
 .page {
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow: clip;
-    max-width: unset;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: clip;
+  max-width: unset;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .page-content {
-    height: 100vh;
-    margin: 0;
-    padding: 2em;
-    padding-bottom: 2.7vw;
-    padding-top: 2.7vw;
-    overflow: hidden;
-    background-color: var(--bs-body-bg);
+  height: 100vh;
+  margin: 0;
+  padding: 2em;
+  padding-bottom: 2.7vw;
+  padding-top: 2.7vw;
+  overflow: hidden;
+  background-color: var(--bs-body-bg);
 }
 
 .page-image {
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow: clip;
-    max-width: unset;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: clip;
+  max-width: unset;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-i.base-page.bi.bi-arrow-up-circle-fill, i.base-page.bi.bi-arrow-up-circle {
-    top: 20px;
+i.base-page.bi.bi-arrow-up-circle-fill,
+i.base-page.bi.bi-arrow-up-circle {
+  top: 12px;
 }
 
-i.base-page.bi.bi-arrow-down-circle-fill, i.base-page.bi.bi-arrow-down-circle {
-    bottom: 20px;
+i.base-page.bi.bi-arrow-down-circle-fill,
+i.base-page.bi.bi-arrow-down-circle {
+  bottom: 12px;
 }
 
-i.base-page.bi.bi-arrow-up-circle-fill, i.base-page.bi.bi-arrow-down-circle-fill,
-i.base-page.bi.bi-arrow-up-circle, i.base-page.bi.bi-arrow-down-circle {
-    position: absolute;
-    right: calc(50% + 20px);
-    font-size: xx-large;
-    color: var(--brand-light-colour);
-    z-index: 999;
+i.base-page.bi.bi-arrow-up-circle-fill,
+i.base-page.bi.bi-arrow-down-circle-fill,
+i.base-page.bi.bi-arrow-up-circle,
+i.base-page.bi.bi-arrow-down-circle {
+  position: absolute;
+  right: calc(50% + 8px);
+  font-size: xx-large;
+  color: var(--brand-light-colour);
+  z-index: 999;
+}
+
+/* // Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  i.base-page.bi.bi-arrow-up-circle-fill,
+  i.base-page.bi.bi-arrow-down-circle-fill,
+  i.base-page.bi.bi-arrow-up-circle,
+  i.base-page.bi.bi-arrow-down-circle {
+    right: 8px;
+  }
 }
 
 #page-holder {
-    scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory;
 }
 
 .first-section {
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    scroll-snap-align: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  scroll-snap-align: center;
 }
 
 .second-section {
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    margin-bottom: -2.4vw;
-    scroll-snap-align: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  margin-bottom: -2.4vw;
+  scroll-snap-align: center;
 }
 
 .other-sections {
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    margin-top: -2.4vw;
-    margin-bottom: -2.4vw;
-    scroll-snap-align: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  margin-top: -2.4vw;
+  margin-bottom: -2.4vw;
+  scroll-snap-align: center;
 }
 
 .last-section {
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    margin-top: -2.4vw;
-    scroll-snap-align: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  margin-top: -2.4vw;
+  scroll-snap-align: center;
 }
 
-@keyframes
-imageAnimation {
-    0% {
-        animation-timing-function: ease-in;
-        opacity: 0;
-    }
-    8% {
-        animation-timing-function: ease-out;
-        opacity: 1;
-    }
-    10% {
-        opacity: 1
-    }
-    20% {
-        opacity: 0
-    }
-    100% {
-        opacity: 0
-    }
+@keyframes imageAnimation {
+  0% {
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  8% {
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  10% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.contact-card {
+  max-width: 400px;
 }
