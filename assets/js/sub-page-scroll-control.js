@@ -44,12 +44,14 @@ const showButtons = (container) => {
 
 let intervalId;
 
-const buttonDown = (button) => {
-  button.nextElementSibling.classList.remove("invisible");
-  button.classList.add("invisible");
+const buttonDown = (button, afterScroll) => {
+  clearInterval(intervalId);
   intervalId = setInterval(() => {
     button.parentNode.scrollBy(0, button.classList.contains("down") ? 2 : -2);
-  });
+    afterScroll();
+    button.nextElementSibling.classList.remove("invisible");
+    button.classList.add("invisible");
+  }, 1);
 };
 
 const buttonUp = (button) => {
@@ -60,22 +62,35 @@ const buttonUp = (button) => {
 
 for (const divScroll of document.getElementsByClassName("page-content")) {
   let up = divScroll.getElementsByClassName("up hollow")[0];
-  up.onmousedown = (event) => {
-    buttonDown(up);
+  let upPressedDown = up.nextElementSibling;
+  up.onmousedown = up.ontouchstart = (event) => {
+    buttonDown(up, () => {
+      showButtons(divScroll);
+    });
   };
-  up.nextElementSibling.onmouseup = (event) => {
+  upPressedDown.onmouseup = upPressedDown.ontouchend = (event) => {
     buttonUp(up);
-    showButtons(divScroll);
   };
 
   let down = divScroll.getElementsByClassName("down hollow")[0];
-  down.onmousedown = (event) => {
-    buttonDown(down);
+  let downPressedDown = down.nextElementSibling;
+  down.onmousedown = down.ontouchstart = (event) => {
+    buttonDown(down, () => {
+      showButtons(divScroll);
+    });
   };
-  down.nextElementSibling.onmouseup = (event) => {
+  downPressedDown.onmouseup = downPressedDown.ontouchend = (event) => {
+    buttonUp(down);
+  };
+
+  const onUpFunction = (event) => {
+    buttonUp(up);
     buttonUp(down);
     showButtons(divScroll);
   };
+
+  document.addEventListener("mouseup", onUpFunction);
+  document.addEventListener("touchend", onUpFunction);
 
   showButtons(divScroll);
 

@@ -7,15 +7,17 @@ layout: default
 
 <div class="no-scroll-body-faker">
   <div class="container page" >
-    <div class="row">
-      <div class="page-content col-12 col-md-6" >
+    <div class="row m-0">
+      <div class="page-content col-12 col-md-6 me-0 pe-0" >
         <i class="up hollow base-page bi bi-arrow-up-circle invisible"></i>
         <i class="up filled base-page bi bi-arrow-up-circle-fill invisible"></i>
-        {{ content }}
+        <div class="pe-5">
+          {{ content }}
+        </div>
         <i class="down hollow base-page bi bi-arrow-down-circle invisible"></i>
         <i class="down filled base-page bi bi-arrow-down-circle-fill invisible"></i>
       </div>
-      <div class="col-6 d-none d-md-block page-image" style="background-image: url({{ image.path | replace_first: "_", "/" }})">
+      <div class="col-6 d-none d-md-block page-image ms-0 ps-0" style="background-image: url({{ image.path | replace_first: "_", "/" }})">
       </div>
     </div>
   </div>
