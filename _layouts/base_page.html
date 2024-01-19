@@ -8,16 +8,16 @@ layout: default
 <div class="no-scroll-body-faker">
   <div class="container page" >
     <div class="row">
-      <div class="col-12 col-md-6 page-content">
-        <i class="base-page bi bi-arrow-up-circle-fill"></i>
-        <i class="base-page bi bi-arrow-up-circle"></i>
+      <div class="page-content col-12 col-md-6" >
+        <i class="up hollow base-page bi bi-arrow-up-circle invisible"></i>
+        <i class="up filled base-page bi bi-arrow-up-circle-fill invisible"></i>
         {{ content }}
-        <i class="base-page bi bi-arrow-down-circle"></i>
-        <i class="base-page bi bi-arrow-down-circle-fill"></i>
+        <i class="down hollow base-page bi bi-arrow-down-circle invisible"></i>
+        <i class="down filled base-page bi bi-arrow-down-circle-fill invisible"></i>
       </div>
       <div class="col-6 d-none d-md-block page-image" style="background-image: url({{ image.path | replace_first: "_", "/" }})">
       </div>
     </div>
   </div>
+  <script src="{{ base.url | prepend: site.url }}/assets/js/sub-page-scroll-control.js"></script>
 </div>
-

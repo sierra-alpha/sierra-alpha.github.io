@@ -1,7 +1,5 @@
 @import branding.css
 
-
-
 /* Bootstrap overrides, if using this template you probably dont want to
  * overwrite things here but instead in the branding.css file */
 .nav-pills {
@@ -132,7 +130,8 @@ i.base-page.bi.bi-arrow-up-circle, i.base-page.bi.bi-arrow-down-circle {
     position: absolute;
     right: calc(50% + 20px);
     font-size: xx-large;
-    visibility: hidden;
+    color: var(--brand-light-colour);
+    z-index: 999;
 }
 
 #page-holder {
