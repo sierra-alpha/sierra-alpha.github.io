@@ -35,7 +35,9 @@ collections_dir:  collections
 collections:
   main_pages:
     output: true
-  posts:
+  notes:
+    output: true
+  projects:
     output: true
 
 defaults:

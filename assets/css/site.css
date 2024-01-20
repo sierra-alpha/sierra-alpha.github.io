@@ -108,6 +108,11 @@ iframe {
   background-color: var(--bs-body-bg);
 }
 
+.scrollable {
+    overflow: unset;
+    overflow: auto;
+}
+
 .page-image {
   height: 100vh;
   margin: 0;
