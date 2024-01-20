@@ -1,0 +1,63 @@
+---
+layout: default
+---
+
+<div class="page-content">
+  <div class="d-flex flex-row-reverse justify-content-between align-items-start">
+    <div class="d-flex flex-row justify-content-end">
+      <a href="/#link-4" class="btn btn-dark rounded-0 rounded-start h-100 text-nowrap">
+        <i class="bi bi-arrow-90deg-left"></i> Return to Notes
+      </a>
+      <a href="/">
+        <img
+          class="rounded-end"
+          src="/assets/images/small-logo.png"
+          style="background-color: white"
+          width="30px"
+        />
+      </a>
+    </div>
+    <div class="d-flex flex-column">
+      <h1 class="note-title">{{ page.title }}</h1>
+    </div>
+  </div>
+  <span class="note-date fs-6 lh-1">First Published: {{ page.date | date_to_string }}
+    {% if page.last_update_date %}
+    |  Last Updated: {{ page.last_update_date | string_to_date | date_to_string }}
+    {% endif %}
+  </span>
+  <hr class="my-1 pb-1">
+  <div class="pe-5 scrollable" style="height: calc(100vh - 190px)">
+    <div class="note">
+      {{ content }}
+    </div>
+    <div class="related">
+      <h2>Related Notes</h2>
+      <ul class="related-notes">
+        {% if site.related_posts %}
+        {% for note in site.related_posts limit:3 %}
+        <li>
+          <h3>
+            <a href="{{ note.url }}" target="_top">
+              {{ note.title }}
+              <br>
+              <span class="note-date fs-6 lh-1">First Published: {{ note.date | date_to_string }}
+                {% if note.last_update_date %}
+                |  Last Updated: {{ note.last_update_date | string_to_date | date_to_string }}
+                {% endif %}
+              </span>
+            </a>
+          </h3>
+        </li>
+        {% endfor %}
+        {% else %}
+        <a href="/#link-4" target="_top">
+          No Releated notes, back to all Notes?
+        </a>
+
+        {% endif %}
+
+      </ul>
+    </div>
+  </div>
+</div>
