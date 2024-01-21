@@ -6,7 +6,7 @@ name: Notes
 
 <div class="d-flex flex-column mx-2">
   {% for note in site.posts %}
-  {% if note.categories | includes "notes" %}
+  {% if note.categories contains "notes" %}
 <a href="{{ note.url }}" class="link-underline link-underline-opacity-0" target="_top">
   <div class="card mb-3 p-0" >
     <div class="row g-0 p-0 m-0">
