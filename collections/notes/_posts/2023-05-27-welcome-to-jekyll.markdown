@@ -1,8 +1,10 @@
 ---
-layout: post
+layout: note
 title:  "Welcome to Jekyll!"
 date:   2023-05-27 14:58:20 +1200
 categories: jekyll update
+tags: newbie
+blurb: A post to help get started with jekyll
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
