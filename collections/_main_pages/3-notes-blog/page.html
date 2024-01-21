@@ -1,0 +1,31 @@
+---
+name: Notes
+---
+<h1>My Outsourced Memory</h1>
+<h5>_and other ramblings_</h5>
+
+<ul>
+  {% for note in site.posts %}
+    <li>
+      <a href="{{ note.url }}" target="_top">{{ note.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+<script type="text/template" id="search-result">
+  <div class="result">
+    <h3><a href="<%= url %>"><%= title %></a></h3>
+    <p><%= excerpt.substr(0, 120) + '...' %></p>
+    <div class="categories">
+      <% for (var i = 0; i < categories.length; i++) { %>
+          <span class="category pill"><%= categories[i] %></span>
+      <% } %>
+    </div>
+  </div>
+</script>
+
+<script src="https://unpkg.com/browse/backbone@1.5.0/backbone.js"></script>
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+<script src="{{ base.url | prepend: site.url }}/assets/js/backbone-posts-collection.js"></script>
+  <script src="{{ base.url | prepend: site.url }}/assets/js/backbone-post-view.js"></script>
+  <script src="{{ base.url | prepend: site.url }}/assets/js/backbone-search-instantiation.js"></script>
